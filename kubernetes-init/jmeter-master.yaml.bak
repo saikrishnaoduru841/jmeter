@@ -11,16 +11,16 @@ spec:
     args: ["-n -t /mnt/jmeter/JMXSCRIPT -l /mnt/jmeter/results/result-DATETIME.jtl -j /mnt/jmeter/logs/master-log-DATETIME.log  -e -o /mnt/jmeter/HtmlReport-DATETIME -R SERVERS"]
     env:
     - name: JVM_ARGS
-      value: "-Xms512m -Xmx1024m"
+      value: "-Xms1024m -Xmx1024m"
     - name: mode
       value: "master"
     resources:
       limits:
-        memory: 1024Mi
+        memory: 512Mi
         cpu: 1000m
       requests:
         cpu: 1000m
-        memory: 1024Mi
+        memory: 512Mi
     volumeMounts:
       - name: master
         mountPath: /mnt/jmeter
