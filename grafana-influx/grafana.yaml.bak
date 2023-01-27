@@ -20,7 +20,7 @@ spec:
         image: grafana/grafana:latest
         env:
         - name: JVM_ARGS
-          value: "-Xms512m -Xmx512m"
+          value: "-Xms1024m -Xmx1024m"
         - name: GF_SECURITY_ADMIN_USER
           value: admin
         - name: GF_SECURITY_ADMIN_PASSWORD
@@ -29,10 +29,10 @@ spec:
           value: grafana-clock-panel,grafana-worldmap-panel,grafana-piechart-panel
         resources:
           limits:
-            cpu: 500m
+            cpu: 1000m
             memory: 512Mi
           requests:
-            cpu: 500m
+            cpu: 1000m
             memory: 512Mi
         volumeMounts:
           - name: data
